@@ -502,21 +502,21 @@
         }
         .services-category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
             margin-top: 3rem;
         }
         .service-category-card {
             background: var(--card-bg);
             border-radius: 2rem;
-            padding: 2.5rem 2rem;
+            padding: 1.5rem;
             border: 1px solid var(--border-dim);
             transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.1rem;
         }
         .service-category-card::before {
             content: '';
@@ -536,30 +536,40 @@
             border-color: var(--neon-purple);
             box-shadow: 0 25px 35px -12px rgba(74,144,226,0.3);
         }
-        .service-category-icon {
-            width: 4rem; height: 4rem;
-            background: rgba(74,144,226,0.12);
-            border-radius: 1.2rem;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--neon-purple);
-            font-size: 1.8rem;
-            border: 1px solid rgba(74,144,226,0.3);
+        .service-category-img {
+            width: 100%;
+            height: 190px;
+            border-radius: 1.3rem;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-dim);
+            background: var(--bg-secondary);
+        }
+        .service-category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .service-category-card:hover .service-category-img img {
+            transform: scale(1.08);
         }
         .service-category-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.45rem;
             color: var(--text-heading);
-            margin-top: 0.5rem;
+            margin-top: 0.2rem;
         }
         .service-category-card p {
             color: var(--footer-text);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            font-size: 0.92rem;
+            line-height: 1.65;
         }
         .service-category-price {
             font-weight: 700;
             color: var(--neon-purple);
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
+            font-size: 1.15rem;
+            margin-top: 0.2rem;
             letter-spacing: -0.01em;
         }
         .service-category-link {
@@ -571,6 +581,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: 0.2s;
+            font-size: 0.95rem;
         }
         .service-category-link:hover {
             gap: 0.9rem;
@@ -1081,35 +1092,43 @@
         <div class="services-category-grid">
             <!-- Card 1 -->
             <div class="service-category-card">
-                <div class="service-category-icon"><i class="fas fa-bone"></i></div>
+                <div class="service-category-img">
+                    <img src="assets/spi.jpg" alt="Spinal Adjustment Treatment">
+                </div>
                 <h3>Spinal Adjustment</h3>
                 <p>Gentle, specific adjustments to restore alignment, reduce nerve irritation, and improve mobility.</p>
                 <div class="service-category-price">From $90</div>
-                <a href="#" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
             <!-- Card 2 -->
             <div class="service-category-card">
-                <div class="service-category-icon"><i class="fas fa-running"></i></div>
+                <div class="service-category-img">
+                    <img src="assets/gallery-rehab.jpg" alt="Sports Injury Rehabilitation">
+                </div>
                 <h3>Sports Injury Rehab</h3>
                 <p>Sport-specific rehabilitation to help you recover from sprains, strains, and overuse injuries.</p>
                 <div class="service-category-price">From $100</div>
-                <a href="#" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
             <!-- Card 3 -->
             <div class="service-category-card">
-                <div class="service-category-icon"><i class="fas fa-user-check"></i></div>
+                <div class="service-category-img">
+                    <img src="assets/neck.jpg" alt="Posture Correction Therapy">
+                </div>
                 <h3>Posture Correction</h3>
                 <p>Corrective exercises and ergonomic guidance to fix forward head, rounded shoulders, and tech neck.</p>
                 <div class="service-category-price">From $85</div>
-                <a href="#" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
             <!-- Card 4 -->
             <div class="service-category-card">
-                <div class="service-category-icon"><i class="fas fa-heartbeat"></i></div>
+                <div class="service-category-img">
+                    <img src="assets/h6.jpg" alt="Chronic Pain Relief and Spine Care">
+                </div>
                 <h3>Chronic Pain Relief</h3>
                 <p>Long-term solutions for herniated discs, sciatica, arthritis, and persistent back or neck pain.</p>
                 <div class="service-category-price">From $80</div>
-                <a href="#" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="service-category-link">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>

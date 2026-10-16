@@ -81,6 +81,7 @@
         [dir="rtl"] .footer-main,
         [dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
         [dir="rtl"] .signature-item { flex-direction: row-reverse; }
+        [dir="rtl"] .masonry-zoom-icon { right: auto; left: 1rem; }
         [dir="rtl"] .service-flow-item {
             border-right: none;
             border-left: 1px solid var(--border-dim);
@@ -564,8 +565,12 @@
         }
         .masonry-item:hover {
             transform: translateY(-4px);
-            border-color: var(--neon-purple);
-            box-shadow: 0 20px 30px -12px rgba(74,144,226,0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="light"] .masonry-item:hover {
+            border-color: rgba(0, 0, 0, 0.25);
+            box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.2);
         }
         .masonry-item img {
             width: 100%;
@@ -580,57 +585,78 @@
         .masonry-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.2) 45%, transparent 75%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 1.5rem;
             opacity: 0;
-            transition: opacity 0.35s ease;
+            transition: opacity 0.3s ease;
+            z-index: 2;
         }
         [data-theme="light"] .masonry-overlay {
-            background: linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 50%, transparent 80%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
         }
         .masonry-item:hover .masonry-overlay {
             opacity: 1;
         }
         .masonry-overlay .gallery-tag {
-            color: var(--neon-purple);
-            font-size: 0.7rem;
+            display: inline-block;
+            width: fit-content;
+            background: var(--neon-purple);
+            color: #FFFFFF;
+            padding: 0.22rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.45rem;
+        }
+        [data-theme="light"] .masonry-overlay .gallery-tag {
+            background: #2B6CB0;
+            color: #FFFFFF;
         }
         .masonry-overlay h4 {
             color: #FFFFFF;
-            font-size: 1.15rem;
-            margin: 0 0 0.3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 0.25rem;
+            line-height: 1.25;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
-        .masonry-overlay span {
-            color: rgba(255,255,255,0.75);
-            font-size: 0.85rem;
+        .masonry-overlay span:not(.gallery-tag) {
+            color: #F1F5F9;
+            font-size: 0.88rem;
+            font-weight: 400;
+            line-height: 1.4;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
         .masonry-zoom-icon {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: rgba(74,144,226,0.9);
+            width: 2.4rem;
+            height: 2.4rem;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0A0A0A;
-            font-size: 1rem;
+            color: #FFFFFF;
+            font-size: 0.9rem;
             transform: scale(0.6);
             opacity: 0;
-            transition: 0.3s ease;
+            transition: all 0.25s ease;
+            z-index: 5;
         }
         .masonry-item:hover .masonry-zoom-icon {
             transform: scale(1);
             opacity: 1;
+        }
+        .masonry-item:hover .masonry-zoom-icon:hover {
+            background: var(--neon-purple);
         }
 
         /* --- Stats strip (new) --- */
@@ -781,13 +807,18 @@
             font-size: 1rem;
         }
         .lightbox-caption span {
-            color: var(--neon-purple);
-            display: block;
+            color: #7BB3F0;
+            display: inline-block;
+            background: rgba(74, 144, 226, 0.25);
+            border: 1px solid rgba(123, 179, 240, 0.5);
+            padding: 0.25rem 0.8rem;
+            border-radius: 9999px;
             font-size: 0.75rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 700;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
         .lightbox-close {
             position: absolute;
