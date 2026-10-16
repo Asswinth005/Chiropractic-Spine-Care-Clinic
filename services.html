@@ -734,40 +734,110 @@
             color: var(--footer-text);
         }
 
-        /* CTA banner (new style) */
+        /* CTA Banner (Condition Assessment Helper) */
         .service-cta-banner {
-            padding: 4rem 0;
+            padding: 4.5rem 0;
             background: var(--bg-primary);
         }
-        .service-cta-inner {
-            background: linear-gradient(145deg, var(--card-bg) 0%, rgba(74,144,226,0.1) 100%);
-            border-radius: 2.5rem;
-            border: 1px solid var(--neon-purple);
-            padding: 4rem 2rem;
+        .service-cta-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-dim);
+            border-radius: 1.75rem;
+            padding: 3.5rem 2.5rem;
             text-align: center;
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
-            box-shadow: 0 25px 35px -15px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
         }
-        .service-cta-inner h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        [data-theme="light"] .service-cta-box {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+        .service-cta-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(74, 144, 226, 0.12);
+            color: var(--neon-purple);
+            border: 1px solid rgba(74, 144, 226, 0.25);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        .service-cta-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
             color: var(--text-heading);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.25;
         }
-        .service-cta-inner h2 span {
+        .service-cta-title span {
             color: var(--neon-purple);
         }
-        .service-cta-inner p {
-            max-width: 550px;
-            margin: 0 auto 2rem;
+        .service-cta-desc {
+            max-width: 600px;
+            margin: 0 auto 1.75rem;
             color: var(--text-main);
             font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .service-condition-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .service-condition-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-dim);
+            color: var(--text-heading);
+            padding: 0.5rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .service-condition-pill i {
+            color: var(--neon-purple);
+            font-size: 0.85rem;
+        }
+        .service-condition-pill:hover {
+            border-color: var(--neon-purple);
+            background: rgba(74, 144, 226, 0.15);
+            transform: translateY(-2px);
         }
         .service-cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .service-cta-guarantee {
+            font-size: 0.85rem;
+            color: var(--footer-text);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .service-cta-guarantee i {
+            color: #10B981;
+        }
+        @media (max-width: 768px) {
+            .service-cta-box {
+                padding: 2.5rem 1.25rem;
+            }
+            .service-cta-buttons .btn-primary,
+            .service-cta-buttons .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
         }
         .btn-primary {
             background-color: var(--neon-purple);
@@ -991,7 +1061,7 @@
 
         @media (max-width: 480px) {
             .services-hero-content h1 { font-size: 2.2rem !important; }
-            .service-cta-inner { padding: 2.5rem 1rem; border-radius: 1.5rem; }
+            .service-cta-box { padding: 2rem 1.25rem; border-radius: 1.25rem; }
             .pricing-item { padding: 1.2rem; }
         }
     </style>
@@ -1231,15 +1301,26 @@
     </div>
 </section>
 
-<!-- 6. CTA Banner (new design) -->
+<!-- 6. CTA Banner (Treatment Finder / Assessment Helper) -->
 <section class="service-cta-banner">
     <div class="container">
-        <div class="service-cta-inner">
-            <h2>Not sure which service you need?</h2>
-            <p>Book a consultation and we'll create a personalized plan just for you.</p>
+        <div class="service-cta-box">
+            <div class="service-cta-tagline"><i class="fas fa-stethoscope"></i> Personalized Treatment Finder</div>
+            <h2 class="service-cta-title">Not Sure Which <span>Treatment</span> You Need?</h2>
+            <p class="service-cta-desc">Every spine is unique. Select your main symptom or schedule a comprehensive initial exam — we'll tailor the right therapy for you.</p>
+            <div class="service-condition-pills">
+                <span class="service-condition-pill"><i class="fas fa-bone"></i> Lower Back Pain</span>
+                <span class="service-condition-pill"><i class="fas fa-laptop"></i> Neck & Screen Strain</span>
+                <span class="service-condition-pill"><i class="fas fa-running"></i> Sports Injury</span>
+                <span class="service-condition-pill"><i class="fas fa-bolt"></i> Sciatica & Nerve Flare</span>
+                <span class="service-condition-pill"><i class="fas fa-child"></i> Posture Realignment</span>
+            </div>
             <div class="service-cta-buttons">
-                <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book appointment</a>
-                <a href="contact.html" class="btn-outline"><i class="fas fa-phone"></i> Call us</a>
+                <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Initial Assessment</a>
+                <a href="tel:+15551234567" class="btn-outline"><i class="fas fa-phone"></i> Speak with a Specialist</a>
+            </div>
+            <div class="service-cta-guarantee">
+                <i class="fas fa-check-shield"></i> Transparent pricing • No hidden treatment plans • Covered by major insurance
             </div>
         </div>
     </div>

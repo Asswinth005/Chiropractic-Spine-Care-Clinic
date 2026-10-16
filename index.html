@@ -918,48 +918,121 @@
         .cta-email button:hover { background: #3A7BD5; transform: translateY(-2px); color: #0A0A0A; }
         [data-theme="light"] .cta-email button:hover { color: #FFFFFF; }
 
-        /* FINISHING SECTION (SIMPLE CTA) */
+        /* FINISHING SECTION (SPLIT CONSULTATION & TRUST CHECKLIST) */
         .finishing-cta-section {
-            padding: 4rem 0 5rem;
+            padding: 5rem 0;
+            background: var(--bg-primary);
         }
         .finishing-card {
             background: var(--card-bg);
             border: 1px solid var(--border-dim);
-            border-radius: 1.5rem;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            max-width: 900px;
+            border-radius: 2rem;
+            padding: 3.5rem 3rem;
+            max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
         }
         [data-theme="light"] .finishing-card {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+        .finishing-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .finishing-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid var(--neon-purple);
+            color: var(--neon-purple);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            width: fit-content;
         }
         .finishing-title {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
             color: var(--text-heading);
-            margin-bottom: 0.8rem;
+            line-height: 1.2;
+            margin: 0;
         }
         .finishing-title span {
             color: var(--neon-purple);
         }
         .finishing-desc {
             font-size: 1.05rem;
-            color: var(--footer-text);
-            max-width: 580px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
         }
-        .finishing-actions {
+        .finishing-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+        .finishing-check-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 0.75rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
-        @media (max-width: 480px) {
+        .finishing-check-item i {
+            color: var(--neon-purple);
+            font-size: 1rem;
+        }
+        .finishing-action-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-dim);
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        .finishing-action-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .finishing-action-card .btn-primary {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+        }
+        .finishing-call-line {
+            font-size: 0.9rem;
+            color: var(--footer-text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .finishing-call-line a {
+            color: var(--neon-purple);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .finishing-call-line a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 991px) {
             .finishing-card {
-                padding: 2.5rem 1.25rem;
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2.5rem 1.5rem;
             }
         }
 
@@ -1399,15 +1472,20 @@
 <section class="finishing-cta-section">
     <div class="container">
         <div class="finishing-card">
-            <h2 class="finishing-title">Ready to Live <span>Pain-Free</span>?</h2>
-            <p class="finishing-desc">Take the first step toward lasting relief and better posture. Schedule your consultation with our chiropractic specialists today.</p>
-            <div class="finishing-actions">
-                <a href="contact.html" class="btn-primary">
-                    <i class="fas fa-calendar-check"></i> Book Appointment
-                </a>
-                <a href="contact.html" class="btn-outline">
-                    <i class="fas fa-envelope"></i> Contact Us
-                </a>
+            <div class="finishing-left">
+                <div class="finishing-badge"><i class="fas fa-sparkles"></i> Welcome First Visit</div>
+                <h2 class="finishing-title">Ready to Live <span>Pain-Free</span>?</h2>
+                <p class="finishing-desc">Take the first step toward lasting spinal relief and better posture. Get your initial consultation, digital posture assessment, and personalized care plan.</p>
+                <div class="finishing-checklist">
+                    <div class="finishing-check-item"><i class="fas fa-check-circle"></i> No doctor referral needed</div>
+                    <div class="finishing-check-item"><i class="fas fa-check-circle"></i> Same-day and Saturday slots available</div>
+                    <div class="finishing-check-item"><i class="fas fa-check-circle"></i> Major health insurance plans accepted</div>
+                </div>
+            </div>
+            <div class="finishing-action-card">
+                <div class="finishing-action-title">Fast-Track Your Appointment</div>
+                <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Online Now</a>
+                <div class="finishing-call-line"><i class="fas fa-phone"></i> Questions? Call <a href="tel:+15551234567">(555) 123-4567</a></div>
             </div>
         </div>
     </div>
